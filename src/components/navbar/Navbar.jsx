@@ -6,7 +6,6 @@ import Image from "next/image";
 
 const Navbar = async () => {
   const session = await auth();
-
   return (
     <div className={styles.container}>
       <Link href="/">

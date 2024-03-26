@@ -5,13 +5,27 @@ import { useFormState } from "react-dom";
 import InputBox from "@/components/inputbox/InputBox";
 import CustomButton from "@/components/buttons/CustomButton";
 import Heading from "../heading/Heading";
+import { useEffect, useRef } from "react";
+import { errorToast, successToast } from "../toast/Toast";
 
 const AdminUserForm = () => {
+    const ref = useRef(null);
   const [state, formAction] = useFormState(addUser, undefined);
 
+  useEffect(() => {
+    if (state?.success) {
+      successToast(state?.message);
+    } else if (state?.error) {
+      errorToast(state?.error);
+    } else return;
+  }, [state]);
   return (
-    <form action={formAction} className="flex flex-col gap-8">
-              <Heading title={"Add New User"} image="./underline.svg" />
+    <form 
+    action={formAction} 
+    className="flex flex-col gap-8"
+    ref={ref}
+    >
+      <Heading title={"Add New User"} image="./underline.svg" />
 
       <InputBox
         label="Username"

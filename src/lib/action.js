@@ -5,7 +5,6 @@ import { Post, User, Contact } from "./models";
 import { connectToDb } from "./utils";
 import { signIn, signOut } from "./auth";
 import bcrypt from "bcryptjs";
-import { redirect } from "next/navigation";
 
 export const addPost = async (prevState, formData) => {
   const { title, desc, slug, userId, img } = Object.fromEntries(formData);
@@ -24,6 +23,7 @@ export const addPost = async (prevState, formData) => {
     console.log("saved to db");
     revalidatePath("/blog");
     revalidatePath("/admin");
+    return { success: true, message: "Post added successfully..." };
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
@@ -61,6 +61,8 @@ export const addUser = async (prevState, formData) => {
     await newUser.save();
     console.log("saved to db");
     revalidatePath("/admin");
+    return { success: true, message: "User added successfully..." };
+
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
@@ -91,7 +93,6 @@ export const handleGithubLogin = async () => {
 export const handleLogout = async () => {
   "use server";
   await signOut();
-  redirect("/login")
 };
 
 export const register = async (previousState, formData) => {
@@ -123,8 +124,8 @@ export const register = async (previousState, formData) => {
 
     await newUser.save();
     console.log("saved to db");
+    return { success: true, message: "Signed up successfully..." };
 
-    return { success: true };
   } catch (err) {
     console.log(err);
     return { error: "Something went wrong!" };
@@ -136,6 +137,7 @@ export const login = async (prevState, formData) => {
 
   try {
     await signIn("credentials", { username, password });
+    return { success: true, message: "Sign in successfully..." };
   } catch (err) {
     console.log(err);
 
@@ -146,13 +148,10 @@ export const login = async (prevState, formData) => {
   }
 };
 
-
-export const contactMe = async (formData) => {
+export const contactMe = async (previousState, formData) => {
+  const { name, email, mobile, message } = Object?.fromEntries(formData);
   try {
     connectToDb();
-
-    const { name, email, mobile, message } = Object.fromEntries(formData);
-
     const newContact = new Contact({
       name,
       email,
@@ -161,21 +160,10 @@ export const contactMe = async (formData) => {
     });
 
     await newContact.save();
-
-    console.log("Saved to db:", newContact);
-
-    // Return success message
-    return { success: true, message: "Contact submitted successfully..." };
+    console.log("saved to db", newContact);
+    return { success: true, message: "Form submitted successfully..." };
   } catch (err) {
-    // Check if the error is a validation error
-    if (err.name === 'ValidationError') {
-      // Log validation errors
-      console.log(err.errors);
-      return { error: "Validation failed. Please check your input." };
-    } else {
-      // Log other errors
-      console.log(err);
-      return { error: "Something went wrong!" };
-    }
+    console.log(err);
+    return { error: "Something went wrong!" };
   }
 };

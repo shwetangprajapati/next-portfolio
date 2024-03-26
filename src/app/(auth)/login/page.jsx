@@ -4,8 +4,6 @@ const LoginPage = () => {
   
   return (
     <>
-    
-
       <LoginForm />
     </>
   );
