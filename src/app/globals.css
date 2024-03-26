@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+  width: 80%;
+  max-width: 80%;
+  height: 100vh;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    width: 95% !important;
+    max-width: 95% !important;
+  }
+}
