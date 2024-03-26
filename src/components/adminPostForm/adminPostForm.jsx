@@ -10,8 +10,7 @@ const AdminPostForm = ({ userId }) => {
 
   return (
     <form action={formAction} className="flex flex-col gap-8">
-              <Heading title={"Add New Post"} image="./underline.svg" />
-
+      <Heading title={"Add New Post"} image="./underline.svg" />
       <input type="hidden" name="userId" value={userId} />
       <InputBox
         label="Title"
