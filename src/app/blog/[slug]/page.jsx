@@ -2,8 +2,11 @@ import { getPost } from "@/lib/data";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Image from "next/image";
+export const dynamic = 'force-dynamic';
+
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const res = await fetch(`${apiUrl}/api/blog/${slug}`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");

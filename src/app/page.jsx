@@ -4,7 +4,7 @@ import ProjectCards from "@/components/project/ProjectCards";
 import Skills from "@/components/skills/Skills";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: "Software Developer | Shwetang Prajapati",
@@ -13,7 +13,8 @@ export const metadata = {
 };
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog", {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const res = await fetch(`${apiUrl}/api/blog`, {
     next: { revalidate: 3600 },
   });
 

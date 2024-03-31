@@ -1,6 +1,7 @@
 import BlogCard from "@/components/blog/BlogCard";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+export const dynamic = 'force-dynamic';
 
 export const metadata = {
   title: "Blogs on - Shwetang Prajapati portfolio",
@@ -8,7 +9,8 @@ export const metadata = {
     "Explore insightful blogs on Shwetang Prajapati's portfolio, unveiling exceptional software solutions.",
 };
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog", {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const res = await fetch(`${apiUrl}/api/blog`, {
     next: { revalidate: 3600 },
   });
 
