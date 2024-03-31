@@ -149,7 +149,7 @@ export const login = async (prevState, formData) => {
 };
 
 export const contactMe = async (previousState, formData) => {
-  const { name, email, mobile, message } = Object?.fromEntries(formData);
+  const { name, email, mobile, message } = Object.fromEntries(formData);
   try {
     connectToDb();
     const newContact = new Contact({
