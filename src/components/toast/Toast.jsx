@@ -9,6 +9,10 @@ pauseOnHover: true,
 draggable: true,
 progress: undefined,
 theme: "dark",
+style: {
+    background: "green",
+    color: "#fff", 
+  }
 };
 
 const toastConfigError = {
@@ -20,6 +24,10 @@ pauseOnHover: true,
 draggable: true,
 progress: undefined,
 theme: "dark",
+style: {
+    background: "red", 
+    color: "#fff", 
+  }
 };
 
 // Function to display success toast

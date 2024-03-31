@@ -4,6 +4,7 @@ import ProjectCards from "@/components/project/ProjectCards";
 import Skills from "@/components/skills/Skills";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import TopLoader from "@/components/toploader/TopLoader";
 export const dynamic = 'force-dynamic';
 
 export const metadata = {
@@ -29,6 +30,7 @@ const Home = async () => {
 
   return (
     <>
+          <TopLoader />
       <Navbar />
       <HeroSection />
       <ProjectCards />
