@@ -1,7 +1,7 @@
 
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
-import ContactForm from "@/components/contactForm/ContactForm";
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
+import ContactForm from "../../components/contactForm/ContactForm";
 export const metadata = {
   title: "Contact - Shwetang Prajapati",
   description:

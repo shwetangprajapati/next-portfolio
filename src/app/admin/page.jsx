@@ -1,11 +1,11 @@
 import { Suspense } from "react";
-import { auth } from "@/lib/auth";
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
-import AdminPosts from "@/components/adminPosts/adminPosts";
-import AdminPostForm from "@/components/adminPostForm/adminPostForm";
-import AdminUsers from "@/components/adminUsers/adminUsers";
-import AdminUserForm from "@/components/adminUserForm/adminUserForm";
+import { auth } from "../../lib/auth";
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
+import AdminPosts from "../../components/adminPosts/adminPosts";
+import AdminPostForm from "../../components/adminPostForm/adminPostForm";
+import AdminUsers from "../../components/adminUsers/adminUsers";
+import AdminUserForm from "../../components/adminUserForm/adminUserForm";
 
 const AdminPage = async () => {
   const session = await auth();

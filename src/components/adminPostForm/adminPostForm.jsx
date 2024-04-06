@@ -1,33 +1,73 @@
 "use client";
-
-import { addPost } from "@/lib/action";
-import { useFormState } from "react-dom";
-import InputBox from "@/components/inputbox/InputBox";
-import CustomButton from "@/components/buttons/CustomButton";
+import { useState } from "react";
+import { successToast, errorToast } from "../../components/toast/Toast";
+import InputBox from "../../components/inputbox/InputBox";
+import CustomButton from "../../components/buttons/CustomButton";
 import Heading from "../heading/Heading";
-import { errorToast, successToast } from "@/components/toast/Toast";
-import { useEffect, useRef } from "react";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const AdminPostForm = ({ userId }) => {
-  const ref = useRef(null);
-  const [state, formAction] = useFormState(addPost, undefined);
-  useEffect(() => {
-    if (state?.success) {
-      successToast(state?.message);
-    } else if (state?.error) {
-      errorToast(state?.error);
-    } else return;
-  }, [state]);
+  const [loading, setLoading] = useState(false);
+  const [blogData, setBlogData] = useState({
+    title: "",
+    desc: "",
+    slug: "",
+    userId: userId,
+    img: "",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/admin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(blogData),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        successToast(data.message);
+      } else {
+        throw new Error("Failed to add post");
+      }
+    } catch (error) {
+      errorToast(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setBlogData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleCKEditorChange = (event, editor) => {
+    const data = editor.getData();
+    setBlogData((prevData) => ({
+      ...prevData,
+      desc: data,
+    }));
+  };
   return (
-    <form action={formAction} className="flex flex-col gap-8" ref={ref}>
-      <Heading title={"Add New Post"} image="./underline.svg" />
+    <form onSubmit={handleSubmit} className="flex flex-col gap-8">
+      <Heading title={"Add New Post"} image="/underline.svg" />
       <input type="hidden" name="userId" value={userId} />
       <InputBox
         label="Title"
         id="title"
         name="title"
         type="text"
-        value={userId}
+        value={blogData.title}
+        onChange={handleChange}
         required
       />
       <InputBox
@@ -35,20 +75,24 @@ const AdminPostForm = ({ userId }) => {
         id="slug"
         name="slug"
         type="text"
-        value={userId}
+        value={blogData.slug}
+        onChange={handleChange}
         required
       />
-      <InputBox label="Image" id="img" name="img" type="text" value={userId} />
-      <textarea
+      <InputBox
+        label="Image"
+        id="img"
+        name="img"
         type="text"
-        name="desc"
-        placeholder="desc"
-        rows={10}
-        className="block w-full rounded-md border-0 py-1.5 text-gray-600 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+        value={blogData.img}
+        onChange={handleChange}
       />
-      <CustomButton>Add</CustomButton>
-
-      {state?.error}
+      <CKEditor
+        editor={ClassicEditor}
+        data={blogData.desc}
+        onChange={handleCKEditorChange} 
+      />
+      <CustomButton>{loading ? "Adding Post..." : "Add"}</CustomButton>
     </form>
   );
 };

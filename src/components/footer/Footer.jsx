@@ -52,8 +52,8 @@ export default function Footer() {
   return (
     <>
       {isClient && (
-        <footer className="text-gray-600 body-font ">
-          <div className="container px-5 py-8 mx-auto flex justify-center text-center sm:flex-row flex-col">
+        <footer className="text-gray-900 body-font ">
+          <div className="container py-8 mx-auto flex justify-center text-center sm:flex-row flex-col">
             <Link href="/" className="-m-1.5 p-1.5 mx-auto sm:mx-0">
               <span className="sr-only">Your Company</span>
               <Image src="/logo.svg" width={44} height={48} alt="logo" />
@@ -70,7 +70,7 @@ export default function Footer() {
                     target="_blank"
                     title={socials.title}
                     rel="noopener noreferrer"
-                    className="text-gray-600 cursor-pointer mx-auto"
+                    className="text-gray-900 cursor-pointer mx-auto"
                     style={{ marginRight: "0.5rem" }} // Adjust margin as needed
                   >
                     <img

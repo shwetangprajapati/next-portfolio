@@ -1,12 +1,10 @@
-import BlogCard from "@/components/blog/BlogCard";
-import HeroSection from "@/components/herosection/HeroSection";
-import ProjectCards from "@/components/project/ProjectCards";
-import Skills from "@/components/skills/Skills";
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
-import TopLoader from "@/components/toploader/TopLoader";
-export const dynamic = 'force-dynamic';
-
+import BlogCard from "../components/blog/BlogCard";
+import HeroSection from "../components/herosection/HeroSection";
+import ProjectCards from "../components/project/ProjectCards";
+import Skills from "../components/skills/Skills";
+import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
+import TopLoader from "../components/toploader/TopLoader";
 export const metadata = {
   title: "Software Developer | Shwetang Prajapati",
   description:
@@ -15,9 +13,7 @@ export const metadata = {
 
 const getData = async () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${apiUrl}/api/blog`, {
-    next: { revalidate: 3600 },
-  });
+  const res = await fetch(`${apiUrl}/api/blog`, { next: { revalidate: 60 } });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -30,7 +26,7 @@ const Home = async () => {
 
   return (
     <>
-          <TopLoader />
+      <TopLoader />
       <Navbar />
       <HeroSection />
       <ProjectCards />

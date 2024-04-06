@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import TopLoader from "@/components/toploader/TopLoader";
-import AnimatedCursorComp from "@/components/animatedCursor/AnimatedCursorComp";
+import TopLoader from "../components/toploader/TopLoader";
+import AnimatedCursorComp from "../components/animatedCursor/AnimatedCursorComp";
 import { ToastContainer } from "react-toastify";
 const inter = Inter({ subsets: ["latin"] });
 

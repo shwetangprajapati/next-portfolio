@@ -1,6 +1,6 @@
-import { getUsers } from "@/lib/data";
+import { getUsers } from "../../lib/data";
 import Image from "next/image";
-import { deleteUser } from "@/lib/action";
+import { deleteUser } from "../../lib/action";
 import Heading from "../heading/Heading";
 import CustomButton from "../buttons/CustomButton";
 
@@ -9,7 +9,7 @@ const AdminUsers = async () => {
 
   return (
     <div className="container mx-auto p-4">
-      <Heading title={"Users"} image="./underline.svg" />
+      <Heading title={"Users"} image="/underline.svg" />
 
       {users.map((user) => (
         <div

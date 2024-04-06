@@ -1,7 +1,7 @@
-import BlogCard from "@/components/blog/BlogCard";
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
-export const dynamic = 'force-dynamic';
+import BlogCard from "../../components/blog/BlogCard";
+import Navbar from "../../components/navbar/Navbar";
+import Footer from "../../components/footer/Footer";
+import Heading from "../../components/heading/Heading";
 
 export const metadata = {
   title: "Blogs on - Shwetang Prajapati portfolio",
@@ -10,9 +10,7 @@ export const metadata = {
 };
 const getData = async () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${apiUrl}/api/blog`, {
-    next: { revalidate: 3600 },
-  });
+  const res = await fetch(`${apiUrl}/api/blog`, { next: { revalidate: 60 } });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -26,6 +24,10 @@ const BlogPage = async () => {
   return (
     <>
       <Navbar />
+      <Heading title="Blogs" image="/underline.svg" />
+      <p className="mb-4  sm:text-xl text-lg   text-gray-900">
+        Stay informed with our curated content.
+      </p>
       <BlogCard blogs={posts} />
       <Footer />
     </>

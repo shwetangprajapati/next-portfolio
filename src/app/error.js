@@ -10,7 +10,7 @@ const Error = () => {
                     Something went wrong
                 </h1>
 
-                <p className="mt-4 text-gray-600 ">
+                <p className="mt-4 text-gray-900 ">
                     Please contact support.
                 </p>
 

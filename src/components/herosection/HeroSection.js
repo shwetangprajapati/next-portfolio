@@ -12,7 +12,7 @@ const HeroSection = () => {
 
                         </h1>
 
-                        <p className="mb-8 leading-relaxed sm:text-xl text-lg   text-gray-600">
+                        <p className="mb-8 leading-relaxed sm:text-xl text-lg   text-gray-900">
                             “Software developer with hands-on experience in website design,
                             adaptation, and maintenance. Eager to leverage an extensive
                             knowledge base and background in frontend development to drive
@@ -31,7 +31,7 @@ const HeroSection = () => {
                             </a>
                             <a
                                 href={`tel:8968966638`} aria-label="call me"
-                                className="ml-4 inline-flex font-semibold text-gray-600 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
+                                className="ml-4 inline-flex font-semibold text-gray-900 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
                                 Call me
                             </a>
                         </div>

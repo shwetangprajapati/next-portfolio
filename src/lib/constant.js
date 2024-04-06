@@ -82,3 +82,46 @@ export const Projects = [
 ];
 
 
+// Array of FAQ items
+export const FAQData = [
+    {
+        question: "Who am I?",
+        answer: "I am Shwetang Prajapati.",
+        isOpen: true
+    },
+    {
+        question: "What is my current job designation?",
+        answer: "I am a software developer.",
+        isOpen: false
+    },
+    {
+        question: "How many years of experience do I have?",
+        answer: "I have more than 2 years of experience. During this time, I have worked on various projects.",
+        isOpen: false
+    },
+    {
+        question: "What skills do I have?",
+        answer: "Next.js, React.js, Javascript, Frontend Development, HTML5, Agile Methodologies, CSS, JSX, Component-based approach, Responsive design, Memoization, Tailwind CSS, Restful API, SEO Principles, Web Development, ES6.",
+        isOpen: false
+    },
+    {
+        question: "Where am I from?",
+        answer: "I belong to the city of nawabs, famous for its Mughlai cuisine: Lucknow, Uttar Pradesh, India.",
+        isOpen: false
+    },
+    {
+        question: "Where am I located currently?",
+        answer: "I am located in Lucknow, Uttar Pradesh, India.",
+        isOpen: false
+    },
+    {
+        question: "How can you get in touch with me?",
+        answer: "You can get in touch with me via email or phone, as mentioned in the 'Contact Us' section. Feel free to reach out to me regarding...",
+        isOpen: false
+    },
+    {
+        question: "When and where did I graduate?",
+        answer: "I started my academic journey at Lovely Professional University in 2016 and graduated in 2019 with an overall CGPA of 8.96.",
+        isOpen: false
+    }
+];

@@ -1,12 +1,10 @@
 import React from "react";
-import Heading from "../heading/Heading";
 import Link from "next/link";
 import Image from "next/image";
 
 const BlogCard = ({ blogs }) => {
   return (
     <>
-      <Heading title="Blogs" image="./underline.svg" />
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 ">
         {blogs.map((blog, index) => {
           const dateStr = blog.createdAt;
@@ -24,7 +22,7 @@ const BlogCard = ({ blogs }) => {
                     className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
                   >
                     <span>{year}</span>
-                    <span className="w-px flex-1 bg-gray-600"></span>
+                    <span className="w-px flex-1 bg-gray-900"></span>
                     <span>
                       {date}-{month}
                     </span>
@@ -44,14 +42,14 @@ const BlogCard = ({ blogs }) => {
                 <div className="flex flex-1 flex-col justify-between">
                   <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
                     <Link href={`/blog/${blog.slug}`}>
-                      <h3 className="sm:text-2xl text-xl mb-3 font-bold uppercase text-gray-600 line-clamp-1">
+                      <h3 className="sm:text-2xl text-xl mb-3 font-bold uppercase text-gray-900 line-clamp-2">
                         {blog.title}
                       </h3>
                     </Link>
-
-                    <p className="mt-2 line-clamp-4  sm:text-xl text-lg   text-gray-600 ">
-                      {blog.desc}
-                    </p>
+                    <div
+                      className="mt-2 line-clamp-4  sm:text-xl text-lg   text-gray-900 "
+                      dangerouslySetInnerHTML={{ __html: blog.desc }}
+                    />
                   </div>
 
                   <div className="sm:flex sm:items-end sm:justify-end">

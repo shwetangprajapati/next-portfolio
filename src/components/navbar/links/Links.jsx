@@ -2,8 +2,8 @@
 import { useState } from "react";
 import styles from "./links.module.css";
 import NavLink from "./navLink/navLink";
-import { handleLogout } from "@/lib/action";
-import { HamburgerIcon } from "@/lib/SVG";
+import { handleLogout } from "../../../lib/action";
+import { HamburgerIcon } from "../../../lib/SVG";
 
 const links = [
   {
@@ -13,6 +13,10 @@ const links = [
   {
     title: "About",
     path: "/about",
+  },
+   {
+    title: "FAQ",
+    path: "/faqs",
   },
   {
     title: "Contact",

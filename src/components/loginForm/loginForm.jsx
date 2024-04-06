@@ -1,13 +1,13 @@
 "use client";
 
-import { login } from "@/lib/action";
+import { login } from "../../lib/action";
 import { useFormState } from "react-dom";
 import Link from "next/link";
 import InputBox from "../inputbox/InputBox";
-import CustomButton from "@/components/buttons/CustomButton";
-import { GithubIcon } from "@/lib/SVG";
-import { handleGithubLogin } from "@/lib/action";
-import Heading from "@/components/heading/Heading";
+import CustomButton from "../../components/buttons/CustomButton";
+import { GithubIcon } from "../../lib/SVG";
+import { handleGithubLogin } from "../../lib/action";
+import Heading from "../../components/heading/Heading";
 import { useEffect } from "react";
 import { errorToast } from "../toast/Toast";
 import { useRouter } from "next/navigation";
@@ -25,12 +25,12 @@ export default function LoginForm() {
     <>
       <div className="flex  flex-1 flex-col justify-center px-6  lg:px-8 h-screen">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Heading title={"Sign in to your account"} image="./underline.svg" />
+          <Heading title={"Sign in to your account"} image="/underline.svg" />
         </div>
         <form action={handleGithubLogin} className="flex justify-center">
           <button
             type="submit"
-            className=" my-4 py-2 px-4 sm:max-w-sm flex justify-center items-center bg-gray-600 hover:bg-gray-700 text-white w-full transition ease-in duration-200 text-center  font-semibold shadow-md focus:outline-none rounded-lg"
+            className=" my-4 py-2 px-4 sm:max-w-sm flex justify-center items-center bg-gray-900 hover:bg-gray-700 text-white w-full transition ease-in duration-200 text-center  font-semibold shadow-md focus:outline-none rounded-lg"
           >
             <GithubIcon />
             Sign in with GitHub
@@ -66,7 +66,7 @@ export default function LoginForm() {
             </div>
           </form>
 
-          <p className="mt-10 text-center  text-gray-600 sm:text-base text-sm ">
+          <p className="mt-10 text-center  text-gray-900 sm:text-base text-sm ">
             Don&apos;t have an account?
             <Link
               href="/signin"
