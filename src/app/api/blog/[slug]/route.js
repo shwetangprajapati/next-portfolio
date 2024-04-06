@@ -1,7 +1,7 @@
 import { Post } from "../../../../lib/models";
 import { connectToDb } from "../../../../lib/utils";
 import { NextResponse } from "next/server";
-
+export const fetchCache = 'force-no-store'
 export const GET = async (request, { params }) => {
   const { slug } = params;
 
