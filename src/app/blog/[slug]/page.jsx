@@ -7,7 +7,7 @@ import Heading from "../../../components/heading/Heading";
 
 const getData = async (slug) => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${apiUrl}/api/blog/${slug}`);
+  const res = await fetch(`${apiUrl}/api/blog/${slug}`,{ cache: 'no-store' });
 
   if (!res.ok) {
     throw new Error("Something went wrong");
@@ -29,7 +29,7 @@ export const generateMetadata = async ({ params }) => {
 
 const getBlogsData = async () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${apiUrl}/api/blog`, { next: { revalidate: 60 } });
+  const res = await fetch(`${apiUrl}/api/blog`, { cache: 'no-store' });
 
   if (!res.ok) {
     throw new Error("Something went wrong");

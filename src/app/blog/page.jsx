@@ -10,7 +10,7 @@ export const metadata = {
 };
 const getData = async () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const res = await fetch(`${apiUrl}/api/blog`, { next: { revalidate: 60 } });
+  const res = await fetch(`${apiUrl}/api/blog`, { cache: 'no-store' });
 
   if (!res.ok) {
     throw new Error("Something went wrong");

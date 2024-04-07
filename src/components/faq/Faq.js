@@ -4,7 +4,7 @@ const Faq = () => {
     return (
         <div className="space-y-4">
             {FAQData.map((item, index) => (
-                <details key={index} className={`group border-s-4 border-indigo-600 bg-gray-100 p-4 ${item.isOpen ? '[&_summary::-webkit-details-marker]:hidden' : ''}`} open={item.isOpen}>
+                <details key={index} className={`group border-s-4 border-indigo-600 bg-gray-100 p-4`} open={item.isOpen}>
                     <summary className="flex cursor-pointer items-center justify-between gap-1.5">
                         <h2 className="sm:text-xl text-lg font-medium text-gray-900">{item.question}</h2>
                         <span className="shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3">

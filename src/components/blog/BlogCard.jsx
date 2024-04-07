@@ -11,14 +11,14 @@ const BlogCard = ({ blogs }) => {
           const dateObj = new Date(dateStr);
           const year = dateObj.getFullYear();
           const month = (dateObj.getMonth() + 1).toString().padStart(2, "0");
-          const date = dateObj.getDate();
+          const date = dateObj.getDate().toString().padStart(2, "0");
 
           return (
             <div key={index} className="rounded-lg ">
               <article className="flex bg-gray-100 transition hover:shadow-xl">
                 <div className="rotate-180 p-2 [writing-mode:_vertical-lr]">
                   <time
-                    dateTime={`${date}-${month}-${year}`} // Only date, without time
+                    dateTime={`${date}-${month}-${year}`} 
                     className="flex items-center justify-between gap-4 text-xs font-bold uppercase text-gray-900"
                   >
                     <span>{year}</span>
@@ -35,7 +35,7 @@ const BlogCard = ({ blogs }) => {
                     height={224}
                     alt={blog.title}
                     src={blog.img}
-                    className="aspect-square  object-cover"
+                    style={{objectFit: "cover"}}
                   />
                 </div>
 
@@ -47,7 +47,7 @@ const BlogCard = ({ blogs }) => {
                       </h3>
                     </Link>
                     <div
-                      className="mt-2 line-clamp-4  sm:text-xl text-lg   text-gray-900 "
+                      className="mt-2 line-clamp-3  sm:text-xl text-lg   text-gray-900 "
                       dangerouslySetInnerHTML={{ __html: blog.desc }}
                     />
                   </div>
