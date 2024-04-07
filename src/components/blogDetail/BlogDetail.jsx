@@ -8,7 +8,7 @@ const BlogDetail = ({ post }) => {
           {post.title}
         </h1>
         <Image src={post.img} alt={post.title} width={1500} height={400} />
-        <div className="p-6">
+        <div className="p-2">
           <p className="text-gray-600 text-sm mb-2">
             Published on <i>{post.createdAt.slice(0,10)}</i>
           </p>
