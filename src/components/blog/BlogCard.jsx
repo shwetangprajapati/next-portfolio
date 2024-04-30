@@ -42,12 +42,12 @@ const BlogCard = ({ blogs }) => {
                 <div className="flex flex-1 flex-col justify-between">
                   <div className="border-s border-gray-900/10 p-4 sm:border-l-transparent sm:p-6">
                     <Link href={`/blog/${blog.slug}`}>
-                      <h3 className="sm:text-2xl text-xl mb-3 font-bold uppercase text-gray-900 line-clamp-2">
+                      <h3 className="text-lg mb-3 font-bold uppercase text-gray-900 line-clamp-3">
                         {blog.title}
                       </h3>
                     </Link>
                     <div
-                      className="mt-2 line-clamp-3  sm:text-xl text-lg   text-gray-900 "
+                      className="mt-2 line-clamp-4  text-md   text-gray-900 "
                       dangerouslySetInnerHTML={{ __html: blog.desc }}
                     />
                   </div>
