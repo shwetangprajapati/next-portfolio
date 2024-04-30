@@ -25,11 +25,12 @@ const AboutPage = () => {
               Welcome to <strong>Shwetang&apos;s</strong> corner of the digital
               world!{" "}
             </p>
-            <p className="mb-4 sm:text-xl text-lg   text-gray-900">
-              I&apos;m a <strong>software developer</strong> with over{" "}
-              <strong>2 years</strong> of hands-on experience in crafting
+            <p className="mb-4 sm:text-xl text-lg text-gray-900">
+              I&apos;m a <strong>software developer</strong> with more than{" "}
+              <strong>2.5 years</strong> of hands-on experience in crafting
               exceptional software solutions.
             </p>
+
             <p className="mb-4 sm:text-xl text-lg   text-gray-900">
               Currently, I am thriving in my role as a{" "}
               <strong>software developer</strong> at{" "}
@@ -37,17 +38,12 @@ const AboutPage = () => {
               based in the vibrant city of Lucknow, India.
             </p>
             <i className="mb-4 sm:text-xl text-lg   text-gray-900">
-              &apos;Lifelong learner who understands the importance of authenticity
-              and building relationships.&apos;
+              &apos;Lifelong learner who understands the importance of
+              authenticity and building relationships.&apos;
             </i>
           </div>
 
-          <Image
-            src="/about.svg"
-            width={512}
-            height={288}
-            alt="about me"
-          />
+          <Image src="/about.svg" width={512} height={288} alt="about me" />
         </div>
 
         <Heading title="Education" image="/underline.svg" />

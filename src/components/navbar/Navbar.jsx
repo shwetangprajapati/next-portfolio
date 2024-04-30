@@ -3,6 +3,7 @@ import Links from "./links/Links";
 import styles from "./navbar.module.css";
 import { auth } from "../../lib/auth";
 import Image from "next/image";
+import { memo } from "react";
 
 const Navbar = async () => {
   const session = await auth();
@@ -18,4 +19,4 @@ const Navbar = async () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);

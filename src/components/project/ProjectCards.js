@@ -1,6 +1,7 @@
 import React from "react";
 import Heading from "../heading/Heading";
 import { Projects } from "../../lib/constant";
+import { memo } from "react";
 
 const ProjectCards = () => {
     return (
@@ -54,4 +55,4 @@ const ProjectCards = () => {
     );
 };
 
-export default ProjectCards;
+export default memo(ProjectCards);

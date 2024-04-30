@@ -1,4 +1,5 @@
 import { skillsData } from "../../lib/constant";
+import { memo } from "react";
 
 const Skills = () => {
 
@@ -20,4 +21,4 @@ const Skills = () => {
     );
 };
 
-export default Skills;
+export default memo(Skills);

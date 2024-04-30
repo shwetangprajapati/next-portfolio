@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { memo } from "react";
 
 const HeroSection = () => {
     return (
@@ -11,14 +12,7 @@ const HeroSection = () => {
                             <Image src="/threelines.svg" alt="Logo" width={24} height={24} className="mt-1" />
 
                         </h1>
-
-                        <p className="mb-8 leading-relaxed sm:text-xl text-lg   text-gray-900">
-                            “Software developer with hands-on experience in website design,
-                            adaptation, and maintenance. Eager to leverage an extensive
-                            knowledge base and background in frontend development to drive
-                            forward and optimize online presence, ultimately propelling
-                            organizational growth and success.”
-                        </p>
+                        <p className="mb-8 leading-relaxed sm:text-xl text-lg   text-gray-900">Experienced software developer with 2.5+ years in website design, adaptation, and maintenance. Seeking challenging role to utilize expertise in HTML5, CSS, Tailwind, JavaScript, Node.js, React.js, and Next.js for innovative web projects.</p>
                         <div className="flex justify-center">
                             <a
                                 href="/shwetangresume.pdf"
@@ -49,4 +43,4 @@ const HeroSection = () => {
     );
 };
 
-export default HeroSection;
+export default memo(HeroSection);

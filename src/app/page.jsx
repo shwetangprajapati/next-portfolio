@@ -31,7 +31,7 @@ const Home = async () => {
       <HeroSection />
       <ProjectCards />
       <Skills />
-      <BlogCard blogs={posts.slice(0, 6)} />
+      <BlogCard blogs={posts} />
       <Footer />
     </>
   );

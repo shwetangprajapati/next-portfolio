@@ -2,7 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-export default function Footer() {
+import { memo } from "react";
+
+ function Footer() {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -88,3 +90,4 @@ export default function Footer() {
     </>
   );
 }
+export default memo(Footer);
