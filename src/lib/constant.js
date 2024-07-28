@@ -96,7 +96,7 @@ export const FAQData = [
     },
     {
         question: "How many years of experience do I have?",
-        answer: "I have more than 2 years of experience. During this time, I have worked on various projects.",
+        answer: "I have more than 3 years of experience. During this time, I have worked on various projects.",
         isOpen: false
     },
     {

@@ -27,7 +27,7 @@ const AboutPage = () => {
             </p>
             <p className="mb-4 sm:text-xl text-lg text-gray-900">
               I&apos;m a <strong>software developer</strong> with more than{" "}
-              <strong>2.5 years</strong> of hands-on experience in crafting
+              <strong>3 years</strong> of hands-on experience in crafting
               exceptional software solutions.
             </p>
 
